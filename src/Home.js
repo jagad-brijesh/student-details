@@ -5,7 +5,7 @@ const Home = () => {
                 <h1 >
                     Home Page
                 </h1>
-                <img className="img-fluid" style={{maxHeight:"70vh"}}  src={require('./image.jpg')} alt="image"/>
+                <img className="img-fluid" style={{ maxHeight: "70vh" }} src={require('./image.jpg')} alt="image" />
                 {/* <img  src="homepage.png" alt="image"/> */}
             </div>
         </div>

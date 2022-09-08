@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="nav1 nav navbar navbar-expand-lg navbar-dark bg-dark">
                 {/* <a className="navbar-brand" href="#">Faculty Details</a> */}
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
@@ -19,7 +19,7 @@ const Header = () => {
                     <ul className="navbar-nav ">
                         <li className="nav-item active url1">
                             <Link to="/" className="nav-link">
-                                Home
+                                <span className="h-4">Home</span>
                             </Link>
                         </li>
                         <li className="nav-item url1">
@@ -35,14 +35,16 @@ const Header = () => {
                         </li>
 
                         <li className="nav-item url1">
-                            <Link to="/addstudent" className="nav-link">
-                                Contact Us
+                            <Link to="/addstudent" className="nav-link ">
+                                Contact&nbsp;Us
                             </Link>
                         </li>
 
                         <li className="nav-item url1">
                             <Link to="/addstudent" className="nav-link">
-                                <button className="btn btn-outline-success btn-sm ">Add</button>
+                                <button className="btn btn-outline-success btn-sm">
+                                    Add&nbsp;Student
+                                </button>
                             </Link>
                         </li>
                     </ul>

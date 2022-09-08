@@ -6,16 +6,6 @@
   color: #e9e9e9;
 }
 
-.home {
-  min-height: calc(200vh);
-}
-
-.Card2 {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  /* background-color: rgb(237, 237, 237); */
-}
 
 .content {
   text-align: center;
@@ -31,18 +21,15 @@ body {
   font-size: .85rem;
 }
 
-.w-15 {
-  width: 15% !important;
+.nav1 {
+  position: sticky;
+  width: 100%;
+  height: 50px;
 }
 
-/* .url1:hover {
-  transition: 0.3s;
-  color: black;
-  background-color: white;
-  font-weight: 600;
+.nav2 {
+  position: sticky;
+  /* margin-top: calc(100vh); */
+  width: 100%;
+  height: 50px;
 }
-
-.url1:active {
-  box-shadow: 0 0px 6px rgb(156, 52, 194);
-  transform: translateY(4px);
-} */

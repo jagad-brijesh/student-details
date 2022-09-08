@@ -1,10 +1,8 @@
 const Footer = () => {
     return (<>
-        <div className="navbar bottom navbar-dark bg-dark">
+        <div className="nav2 navbar bottom navbar-dark bg-dark">
             <div className="footer">
-                <h4>
-                    &copy; All Rights Reserved.
-                </h4>
+                <span className="mx-4 my-1 text-muted">&copy; All Rights Reserved.</span>
             </div>
         </div>
     </>);
