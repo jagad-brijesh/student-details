@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 const AddStudent = () => {
 
 
-    var [Student, setStudent] = useState({});
     let params = useParams();
 
     const [student_data, setStudentData] = useState({});
@@ -34,7 +33,18 @@ const AddStudent = () => {
                     const response = await fetch(url);
                     const json = await response.json();
                     console.log("res:::", json);
-                    setStudent(json);
+                    var temp = new Date(json.DOB);
+                    const options = {
+                        year: '2-digit',
+                        month: '2-digit',
+                        day: '2-digit'
+                    };
+                    const date = new Intl.DateTimeFormat('en-US', options).format();
+                    console.log(date);
+                    setStudentData(
+                        { ...json, DOB: temp });
+
+                    console.log("student_data:::", student_data);
                 } catch (error) {
                     console.log("error", error);
                 }
@@ -133,17 +143,34 @@ const AddStudent = () => {
                         </div>
                         <div class="mx-4 my-2 px-4 py-2 btn btn-primary w-auto"
                             onClick={() => {
-                                console.log(student_data);
-                                fetch("https://6318d1c36b4c78d91b300058.mockapi.io/students", {
-                                    method: "POST",
-                                    body: JSON.stringify({ ...student_data, createdAt: new Date().toDateString() }),
-                                    headers: {
-                                        "Content-Type": "application/json"
-                                    }
-                                }).then(() => {
-                                    // navigate("/home");
-                                    console.log("success");
-                                });
+                                if (isAdd) {
+                                    console.log(student_data);
+                                    fetch("https://6318d1c36b4c78d91b300058.mockapi.io/students", {
+                                        method: "POST",
+                                        body: JSON.stringify({ ...student_data, createdAt: new Date().toDateString() }),
+                                        headers: {
+                                            "Content-Type": "application/json"
+                                        }
+                                    }).then(() => {
+                                        // navigate("/home");
+                                        console.log("success");
+                                    });
+                                } else {
+                                    fetch(
+                                        "https://6318d1c36b4c78d91b300058.mockapi.io/students/" +
+                                        params.id,
+                                        {
+                                            method: "PUT",
+                                            body: JSON.stringify(student_data),
+                                            headers: {
+                                                "Content-Type": "application/json"
+                                            }
+                                        }
+                                    ).then(() => {
+                                        alert("updated sucessfully");
+                                    });
+                                }
+
                                 //TODO : add student and redirect to home page.
                             }}>Submit</div>
                     </form>
