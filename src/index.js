@@ -20,7 +20,7 @@ root.render(
         <Route path='allstudents' element={<AllStudents />}></Route>
         <Route path='students/:id' element={<StudentDetails />}></Route>
         <Route path='addstudent' element={<AddStudent />}></Route>
-
+        <Route path='editstudent/:id' element={<AddStudent />}></Route>
       </Route>
     </Routes >
   </BrowserRouter >

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 const AllStudents = () => {
     var [Students, setStudents] = useState([]);
+    var navigate = useNavigate();
     useEffect(() => {
         const url = "https://6318d1c36b4c78d91b300058.mockapi.io/students";
 
@@ -36,7 +37,9 @@ const AllStudents = () => {
 
                     <div class="row mx-5 my-2">
                         <div class="col-md-6 pr-3">
-                            <div className="btn btn-outline-primary btn-md">Edit</div>
+                            <div className="btn btn-outline-primary btn-md" onClick={() => {
+                                navigate('../editstudent/' + fObj.id);
+                            }}>Edit</div>
                         </div>
                         <div class="col-md-6 ">
                             <div className="btn btn-outline-danger btn-md" onClick={() => {
